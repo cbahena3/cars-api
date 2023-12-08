@@ -29,4 +29,10 @@ class CarsController < ApplicationController
     )
     render :show
   end
+
+  def destroy
+    @car = Car.find_by(id: params[:id])
+    @car.destroy
+    render json:{message: "Destroyed successfully"}
+  end
 end
