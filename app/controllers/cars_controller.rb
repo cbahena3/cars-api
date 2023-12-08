@@ -13,4 +13,9 @@ class CarsController < ApplicationController
     )
     render :show
   end
+
+  def show
+    @car = Car.find_by(id: params[:id])
+    render :show
+  end
 end
